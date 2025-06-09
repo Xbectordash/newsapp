@@ -1,10 +1,29 @@
 class NewsResponseModel {
+  /// Represents the complete data model for handling responses from a news API.
+  ///
+  /// This includes:
+  /// - [NewsResponseModel]: The top-level response structure containing the request status,
+  ///   total number of results, and a list of [Article] objects.
+  /// - [Article]: Defines the structure of a single news article, including fields like
+  ///   author, title, description, URL, image URL, publication date, and content.
+  /// - [Source]: Represents the source of a news article, including its ID and name.
+  ///
+  /// All models support:
+  /// - JSON serialization and deserialization via `fromJson` and `toJson` methods,
+  ///   enabling seamless conversion between API data and Dart objects.
+  /// - Nullable fields to ensure robustness against missing or partial API data.
+  /// - A `copyWith` extension method on [NewsResponseModel] to allow immutability-friendly
+  ///   updates when modifying existing instances.
+
   String? _status;
   int? _totalResults;
   List<Article>? _articles;
 
-  NewsResponseModel(
-      {String? status, int? totalResults, List<Article>? articles}) {
+  NewsResponseModel({
+    String? status,
+    int? totalResults,
+    List<Article>? articles,
+  }) {
     if (status != null) {
       this._status = status;
     }
@@ -55,15 +74,16 @@ class Article {
   String? _publishedAt;
   String? _content;
 
-  Article(
-      {Source? source,
-      String? author,
-      String? title,
-      String? description,
-      String? url,
-      String? urlToImage,
-      String? publishedAt,
-      String? content}) {
+  Article({
+    Source? source,
+    String? author,
+    String? title,
+    String? description,
+    String? url,
+    String? urlToImage,
+    String? publishedAt,
+    String? content,
+  }) {
     if (source != null) {
       this._source = source;
     }
@@ -108,8 +128,9 @@ class Article {
   set content(String? content) => _content = content;
 
   Article.fromJson(Map<String, dynamic> json) {
-    _source =
-        json['source'] != null ? new Source.fromJson(json['source']) : null;
+    _source = json['source'] != null
+        ? new Source.fromJson(json['source'])
+        : null;
     _author = json['author'];
     _title = json['title'];
     _description = json['description'];

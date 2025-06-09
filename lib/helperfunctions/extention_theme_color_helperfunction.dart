@@ -2,6 +2,10 @@ import 'package:flutter/material.dart';
 
 @immutable
 class CustomThemeColors extends ThemeExtension<CustomThemeColors> {
+  /// A [ThemeExtension] for defining custom theme colors like news card background,
+/// borders, and search field background. Includes `copyWith`, `lerp`, and a
+/// `BuildContext` extension for easy access via `context.customColors`.
+
   final Color newsCardColor;
   final Color borderColor;
   final Color searchFieldBg;

@@ -1,11 +1,42 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:newsapp/bussiness/bloc/news_api_management_bloc/news_bloc.dart';
-import 'package:newsapp/bussiness/bloc/news_api_management_bloc/news_event.dart';
-import 'package:newsapp/helperfunctions/debouncing_helperfunction.dart';
-import 'package:newsapp/helperfunctions/extention_theme_color_helperfunction.dart';
+import 'package:newsapp/bussiness/bloc/news_bloc/news_bloc.dart';
+import 'package:newsapp/bussiness/bloc/news_bloc/news_event.dart';
+import 'package:newsapp/helperFunctions/debouncing_helperFunction.dart';
+import 'package:newsapp/helperFunctions/extention_theme_color_helperFunction.dart';
 
 class SearchBarWidget extends StatefulWidget {
+  /// A search input widget with debounce functionality to fetch news articles based on user input.
+///
+/// This widget provides a styled [TextField] for users to type search queries.
+/// It uses a debounce mechanism to delay sending the search event until
+/// the user stops typing for 400 milliseconds, minimizing unnecessary API calls.
+///
+/// When the user types, the input is debounced and then triggers a [FetchInitialNews]
+/// event on the [NewsBloc] with the current search topic.
+///
+/// Visual features:
+/// - Filled background color matching the theme's custom search field background.
+/// - Rounded corners with a radius of 14.
+/// - A search icon as prefix.
+/// - Styled input borders with no visible lines for a clean look.
+///
+/// Usage example:
+/// ```dart
+/// SearchBarWidget()
+/// ```
+///
+/// Dependencies:
+/// - Uses the [Debounce] helper class for debouncing input.
+/// - Dispatches events to [NewsBloc] to trigger news fetching based on the search query.
+/// - Uses theme extension for custom colors via `context.customColors`.
+///
+/// Note:
+/// The search input is case-sensitive and triggers the search event only after the debounce duration.
+/// The text controller and debounce objects are properly disposed of when the widget is removed.
+///
+
+
   const SearchBarWidget({super.key});
 
   @override

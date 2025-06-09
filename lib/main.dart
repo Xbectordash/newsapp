@@ -1,21 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
-import 'package:newsapp/bussiness/bloc/news_api_management_bloc/news_bloc.dart';
+import 'package:newsapp/bussiness/bloc/news_bloc/news_bloc.dart';
 import 'package:newsapp/bussiness/bloc/theme_management_bloc/theme_bloc.dart';
 import 'package:newsapp/bussiness/bloc/theme_management_bloc/theme_state.dart';
 import 'package:newsapp/data/model/theme_model.dart';
 import 'package:newsapp/presentation/screens/news_landing_screen.dart';
 
 Future<void> main() async {
-  await dotenv.load(fileName: ".env"); // Load env file
+  await dotenv.load(fileName: ".env"); 
   runApp(MyApp());
 }
-
-// void main(){
-//   runApp(MyApp());
-// }
-
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
