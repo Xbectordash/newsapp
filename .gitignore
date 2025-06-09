@@ -12,7 +12,7 @@
 .swiftpm/
 *.env
 migrate_working_dir/
-*.vscode
+.vscode/
 
 # IntelliJ related
 *.iml
