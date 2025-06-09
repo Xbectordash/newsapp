@@ -1,16 +1,25 @@
-# newsapp
+# 📰 Flutter News App
 
-A new Flutter project.
+A sleek and modern News App built using Flutter, designed to fetch and display the latest news articles with a clean UI and smooth performance.
 
-## Getting Started
+## 🚀 Features
 
-This project is a starting point for a Flutter application.
+- 🗞️ Browse latest news articles
+- 🔍 Search news by topic or keyword
+- 📄 Read full articles in-app
+- 🌐 API integration for real-time content
+- 💡 Light/Dark Theme Support
+- 📱 Fully responsive across devices
+- 🔄 Pagination & Lazy Loading
+- 🧊 Shimmer Loading Effect (while fetching data)
 
-A few resources to get you started if this is your first Flutter project:
+## 📷 Screenshots
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+### 🏠 Home Screen  
+![Home](assets/screenshots/home.png)
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+### 📄 Article View  
+![Article](assets/screenshots/articles.png)
+
+### 🔍 Detail Screen  
+![Detail](assets/screenshots/details.png)
